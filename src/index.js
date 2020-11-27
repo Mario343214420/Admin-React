@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import Admin from './pages/Admin';
+// import Login from './pages/Login';
 
+import Mobile from  './Mobile'
+import Computer from  './Computer'
+
+import reportWebVitals from './reportWebVitals';
+const w = document.documentElement.clientWidth
+let template = w > 500 ? (
+  <Computer />
+) : (
+  <Mobile />
+)
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  template,
   document.getElementById('root')
 );
 
